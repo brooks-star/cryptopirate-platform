@@ -3,6 +3,24 @@ services:
     name: cryptopirate
     env: python
     plan: free
-    buildCommand: pip install -r requirements.txt
+
+    # Force a clean, explicit build
+    buildCommand: |
+      python -V
+      python -m pip install --upgrade pip
+      pip install -r requirements.txt
+
+    # Start your app
     startCommand: python platform.py --serve
-    autoDeploy: true
+
+    # Optional, but helps Render pick a compatible runtime
+    runtime: "python3"
+
+    # Environment vars (we'll set values in the dashboard)
+    envVars:
+      - key: APP_FERNET_KEY
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: ENGINE_RUN
+        value: "1"
