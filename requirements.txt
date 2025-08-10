@@ -1,0 +1,9 @@
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+sqlalchemy>=2.0
+aiosqlite>=0.20.0
+passlib[bcrypt]>=1.7.4
+python-dotenv>=1.0.1
+pydantic[dotenv]>=2.8.2
+itsdangerous>=2.2.0
+cryptography>=42.0.0
