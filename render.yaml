@@ -13,10 +13,9 @@ services:
     # Start your app
     startCommand: python platform.py --serve
 
-    # Optional, but helps Render pick a compatible runtime
-    runtime: "python3"
+    autoDeploy: true
 
-    # Environment vars (we'll set values in the dashboard)
+    # Declare env vars; you’ll set values in the Render UI
     envVars:
       - key: APP_FERNET_KEY
         sync: false
